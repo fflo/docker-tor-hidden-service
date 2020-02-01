@@ -13,7 +13,7 @@ version: "2"
 
 services:
   tor:
-    image: goldy/tor-hidden-service:0.3.5.8
+    image: fflo/tor-hidden-service:0.3.5.8
     links:
       - hello
       - world
@@ -154,7 +154,7 @@ Container version will follow tor release versions.
 
 This container uses [`pyentrypoint`](https://github.com/cmehay/pyentrypoint) to generate its setup.
 
-If you need to use the legacy version, please checkout the `legacy` branch or pull `goldy/tor-hidden-service:legacy`.
+If you need to use the legacy version, please checkout the `legacy` branch or pull `fflo/tor-hidden-service:legacy`.
 
 ### pytor
 
@@ -172,7 +172,7 @@ This containner uses [`pytor`](https://github.com/cmehay/pytor) to mannages tor 
 $ docker run -d --name hello_world tutum/hello-world
 
 # and just link it to this container
-$ docker run -ti --link hello_world goldy/tor-hidden-service
+$ docker run -ti --link hello_world fflo/tor-hidden-service
 ```
 
 The .onion URLs are displayed to stdout at startup.
@@ -180,7 +180,7 @@ The .onion URLs are displayed to stdout at startup.
 To keep onion keys, just mount volume `/var/lib/tor/hidden_service/`
 
 ```sh
-$ docker run -ti --link something --volume /path/to/keys:/var/lib/tor/hidden_service/ goldy/tor-hidden-service
+$ docker run -ti --link something --volume /path/to/keys:/var/lib/tor/hidden_service/ fflo/tor-hidden-service
 ```
 
 Look at the `docker-compose.yml` file to see how to use it.
