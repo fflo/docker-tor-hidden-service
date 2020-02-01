@@ -1,5 +1,5 @@
 FROM    alpine:latest
-ARG     tor_version
+ARG     TOR_VERSION
 
 ENV     HOME /var/lib/tor
 
